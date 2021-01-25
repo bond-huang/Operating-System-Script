@@ -1,5 +1,6 @@
 #!/bin/ksh
 # Two nodes PowerHA resource group switch script.
+# Need root user to run.
 Cls_dir="/usr/es/sbin/cluster/utilities"
 Cls_State=`$Cls_dir/cldump |sed -n '/Cluster State/p' |awk '{print $3}'`
 Cls_Substate=`$Cls_dir/cldump |sed -n '/Cluster Substate/p' |awk '{print $3}'`
