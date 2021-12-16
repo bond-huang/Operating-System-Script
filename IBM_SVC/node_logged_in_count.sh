@@ -1,3 +1,13 @@
+## If your SVC have a lot of hosts,and most of them are automatically created by powervc
+## Powervc automatically created is generally degraded state
+## In these degraded hosts,may be have many node_logged_in_count is singular
+## Copy and paste them to the command line to run 
+## Only used SVC's lshost command, no superuser user required
+## The SVC version tested is V7.8,no awk or gawk,so mostly use sed command
+## The output uses a comma separator
+## Recommended to copy the output to a csv file or Direct output to csv file
+## And use excel to optimize the format
+
 echo 'Host Name,WWPN,node_logged_in_count,WWPN,node_logged_in_count,\
     WWPN,node_logged_in_count,WWPN,node_logged_in_count,'
 for id in `lshost -nohdr -delim : -filtervalue status=degraded |\
